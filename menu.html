@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 * {
     box-sizing: border-box;
@@ -85,6 +86,34 @@ html {
         width: 100%;
     }
 }
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+
 </style>
 </head>
 <body>
@@ -104,14 +133,56 @@ html {
   </ul>
 </div>
 
-<div class="col-6">
-  <h1>Menu</h1>
+
+<div class="col-7">
+ 
+<h1>McDonald's</h1>
+<div class="gallery">
+    <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
+  <div class="desc">McDonald's Cheeseburger - 12 kr.</div>
+</div>
+
+<div class="gallery">
+    <img src="pic/mcd/hero_hamburger.png" alt="Hamburger" width="300" height="200">
+  <div class="desc">McDonald's Cheeseburger - 12 kr.</div>
+</div>
+
+<div class="gallery">
+    <img src="pic/mcd/hero_world-famous-fries.png" alt="Pomfritter" width="300" height="200">
+  <div class="desc">McDonald's Pomfritter - 16 kr.</div>
+</div>
+
+<div class="gallery">
+    <img src="pic/mcd/hero_coke.png" alt="Mountains" width="300" height="200">
+  <div class="desc">McDonald's Sodavand - 18 kr.</div>
 </div>
 
 
 
 </div>
 
+
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
 
 </body>
 </html>
