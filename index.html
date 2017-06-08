@@ -3,6 +3,15 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 <style>
 * {
     box-sizing: border-box;
@@ -107,7 +116,7 @@ html {
     <li>Om os</li>
   </ul>
 </div>
-<div class="col-5">
+<div class="col-6">
    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <!-- Identify your business so that you can collect the payments. -->
     <input type="hidden" name="business" value="kin@kinskards.com">
@@ -150,6 +159,10 @@ html {
     <input type="hidden" name="option_amount1" value="12">
     <input type="hidden" name="option_select2" value="McDonald's Sodavand">
     <input type="hidden" name="option_amount2" value="16">
+    
+    <input type="hidden" name="on2"value="Tidspunkt">
+    <label for="os2">Tidspunkt</label>
+    <input type="text" id="datepicker" name="os2" id="os2">
 
     <!-- Display the payment button. -->
     <input type="image" name="submit"
