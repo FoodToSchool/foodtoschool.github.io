@@ -145,7 +145,7 @@ div.desc {
 
 <div class="gallery">
     <img src="pic/mcd/hero_hamburger.png" alt="Hamburger" width="300" height="200">
-  <div class="desc">McDonald's Cheeseburger - 12 kr.</div>
+  <div class="desc">McDonald's Hamburger - 12 kr.</div>
 </div>
 
 <div class="gallery">
@@ -165,25 +165,7 @@ div.desc {
 
 
 
-<script>
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
 
 </body>
 </html>
