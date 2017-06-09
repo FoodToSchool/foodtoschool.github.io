@@ -99,6 +99,28 @@ html {
         width: 100%;
     }
 }
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+    height: 360px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
 </style>
 </head>
 <body>
@@ -191,15 +213,28 @@ html {
     <input type="hidden" name="on2"value="Tidspunkt">
     <label for="os2">Tidspunkt:</label>
     <input type="text" id="datepicker" name="os2" id="os2">
-    
     <p></p>
-
-    <!-- Display the payment button. -->
+    
     <input type="image" name="submit"
         src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
         alt="Add to Cart">
     <img alt="" width="1" height="1"
         src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    
+    <p></p>
+    
+    <h1>Comboer</h1>
+        <div class="gallery">
+            <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
+          <div class="desc">GP-Food's Classic Combo - 3 Cheeseburger og en valgfri sodavand</div>
+        </div>
+        <div class="gallery">
+            <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
+          <div class="desc">GP-Food's Classic Combo - 3 Cheeseburger og en valgfri sodavand</div>
+        </div>
+
+    <!-- Display the payment button. -->
+    
 </form>
 </div>
 
