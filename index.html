@@ -223,19 +223,54 @@ div.desc {
     
     <p></p>
     
-    <h1>Comboer</h1>
-        <div class="gallery">
-            <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
-          <div class="desc">GP-Food's Classic Combo - 3 Cheeseburger og en valgfri sodavand</div>
-        </div>
-        <div class="gallery">
-            <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
-          <div class="desc">GP-Food's Classic Combo - 3 Cheeseburger og en valgfri sodavand</div>
-        </div>
+
 
     <!-- Display the payment button. -->
     
 </form>
+
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+  <!-- Identify your business so that you can collect the payments. -->
+  <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">
+
+  <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="add" value="1">
+
+  <!-- Specify details about the item that buyers will purchase. -->
+  <input type="hidden" name="item_name" value="Combo - Tre Cheeseburgers og en sodavand">
+  <input type="hidden" name="amount" value="40">
+  <input type="hidden" name="currency_code" value="DKK">
+
+  <!-- Display the payment button. -->
+  <h1>Comboer</h1>
+        <div class="gallery">
+            <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
+          <div class="desc">GP-Food's Classic Combo - 3 Cheeseburger og en valgfri sodavand 40 kr.</div>
+            <input type="hidden" name="on1" value=" Sodavand">
+            <label for="os1">Sodavand:</label>
+           <select name="os1">
+        <option value="Ingen sodavand">Ingen sodavand</option>
+        <option value="Squash Light">Squash Light - 10 kr.</option>
+        <option value="Ananas">Ananas - 10 kr.</option>
+        <option value="Hindbær">Hindbær - 10 kr.</option>
+        <option value="Abrikos">Abrikos - 10 kr.</option>
+        <option value="Topform Light">Topform Light - 10 kr.</option>
+        </select>
+    <input type="hidden" name="option_index" value="0">
+    <input type="hidden" name="option_select1" value="Squash Light">
+    <input type="hidden" name="option_select2" value="Ananas">
+    <input type="hidden" name="option_select3" value="Hindbær">
+    <input type="hidden" name="option_select4" value="Abrikos">
+    <input type="hidden" name="option_select5" value="Topform Light">
+  <input type="image" name="submit"
+    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+    alt="Add to Cart">
+  <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+</form>
+
 </div>
 
 
