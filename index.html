@@ -122,6 +122,30 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
+.alert {
+    padding: 20px;
+    background-color: #36b2f4; 
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
 </style>
 </head>
 <body>
@@ -137,10 +161,17 @@ div.desc {
   <ul>
     <a href="index.html" style="text-decoration: none;"><li style="background-color: #32cd32">Bestil</li></a>
     <a href="menu.html" style="text-decoration: none;"><li>Menu</li></a>
-    <li>Om os</li>
+      <a href="abonnement.html" style="text-decoration: none;"><li>Abonnement</li></a>
+    <a href="om-os.html" style="text-decoration: none;"><li>Om os</li></a>
   </ul>
 </div>
 <div class="col-6">
+    
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Info: Se vores opdateringer på vores <a href="https://twitter.com/official_gpfood" style="color: rgb(222, 222, 222);" target="_blank">Twitter!</a>
+    </div>
+
    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <!-- Identify your business so that you can collect the payments. -->
     <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">

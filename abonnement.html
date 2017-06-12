@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-    <title>GP-Food McDonalds</title>
+    <title>GP-Food Abonnement</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="pic/logo.png">
@@ -110,6 +110,8 @@ div.gallery img {
 div.desc {
     padding: 15px;
     text-align: center;
+    text-decoration: none;
+    color: black;
 }
 .responsive {
     padding: 0 6px;
@@ -117,6 +119,51 @@ div.desc {
     width: 24.99999%;
 }
 
+.columns {
+    float: left;
+    width: 33.3%;
+    padding: 8px;
+}
+
+.price {
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+}
+
+.price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+}
+
+.price .grey {
+    background-color: #eee;
+    font-size: 20px;
+}
+
+.button {
+    background-color: #5e9ee8;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
 
 </style>
 </head>
@@ -139,28 +186,46 @@ div.desc {
 </div>
 
 
-<div class="col-6">
+<div class="col-8">
  
-<h1>McDonalds</h1>
-<div class="gallery">
-    <img src="pic/mcd/hero_cheeseburger.png" alt="Cheeseburger" width="300" height="200">
-  <div class="desc">McDonald's Cheeseburger - 15 kr.</div>
+<h1>GP-Food - Abonnement</h1>
+<div class="columns">
+  <ul class="price">
+    <li class="header">Kids Meal</li>
+    <li class="grey">50 kr. / Måned</li>
+    <li>1 Cheeseburger</li>
+    <li>1 Danskvand</li>
+    <li>Vælg klasse</li>
+    <li>Tidspunkt</li>
+    <li>*</li>
+    <li class="grey"><a href="#" class="button">Køb Her!</a></li>
+  </ul>
 </div>
 
-<div class="gallery">
-    <img src="pic/mcd/hero_hamburger.png" alt="Hamburger" width="300" height="200">
-  <div class="desc">McDonald's Hamburger - 15 kr.</div>
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#5e9ee8">Deluxe</li>
+    <li class="grey">135 kr. / Måned</li>
+    <li>3 Cheeseburgers</li>
+    <li>Valgfri Sodavand</li>
+    <li>Vælg klasse</li>
+    <li>Tidspunkt</li>
+    <li>Vælg Sodavand</li>
+    <li class="grey"><a href="#" class="button">Køb Her!</a></li>
+  </ul>
 </div>
 
-<div class="gallery">
-    <img src="pic/mcd/hero_world-famous-fries.png" alt="Pomfritter" width="300" height="200">
-  <div class="desc">McDonald's Pomfritter - 16 kr.</div>
-</div>
-
-
-<div class="gallery">
-    <img src="pic/mcd/hero_big-mac.png" alt="Big Mac" width="300" height="200">
-  <div class="desc">McDonald's Big Mac - 36 kr.</div>
+<div class="columns">
+  <ul class="price">
+    <li class="header">Teen Meal</li>
+    <li class="grey">85 kr. / Måned</li>
+    <li>2 Cheeseburgers</li>
+    <li>Valgfri Harboe Sodavand</li>
+    <li>Vælg klasse</li>
+    <li>Tidspunkt</li>
+    <li>Vælg Harboe Sodavand</li>
+    <li class="grey"><a href="#" class="button">Køb her!</a></li>
+  </ul>
 </div>
 
 
