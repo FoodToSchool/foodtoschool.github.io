@@ -106,7 +106,7 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 200px;
-    height: 395px;
+    height: 475px;
 }
 
 div.gallery:hover {
@@ -266,12 +266,40 @@ div.desc {
     <input type="hidden" name="option_select4" value="Abrikos">
     <input type="hidden" name="option_select5" value="Topform Light">
             <p></p>
+            
+    <input type="hidden" name="on2" value=" Klasse">
+    <label for="os2">Klasse:        </label>
+        <select name="os2" id="os2">
+            <option value="Ukendt">
+                -- Vælg din klasse --</option>
+            <option value="7a">7.a</option>
+            <option value="7b">7.b</option>
+            <option value="7c">7.c</option>
+        </select>
+            
+            <p></p>
+    <input type="hidden" name="on4"value="Tidspunkt">
+    <label for="os4">Tidspunkt:</label>
+    <input type="text" id="datepicker2" name="os4" id="os4">
+            <p></p>
+            
+<!-- Datepicker script to combos Start -->
+  <script>
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>  
+<!-- End -->
+            
   <input type="image" name="submit"
     src="pic/button%20(1).png"
     alt="Add to Cart">
   <img alt="" width="1" height="1"
     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    
 </form>
+
+
 
 </div>
 
