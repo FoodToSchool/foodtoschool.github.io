@@ -20,7 +20,7 @@
  
   <script>
   $( function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({ beforeShowDay: $.datepicker.noWeekends });
   } );
   </script>
 <style>
@@ -154,6 +154,7 @@ div.desc {
 .closebtn:hover {
     color: black;
 }
+    
 
 </style>
 </head>
@@ -354,9 +355,11 @@ div.desc {
     <!-- Datepicker script to combos Start -->
       <script>
       $( function() {
-        $( "#datepicker2" ).datepicker();
+        $( "#datepicker2" ).datepicker({ beforeShowDay: $.datepicker.noWeekends });
       } );
-      </script>  
+      
+      </script> 
+      
     <!-- End -->
 
       <input type="image" name="submit"
@@ -422,7 +425,7 @@ div.desc {
     <!-- Datepicker script to combos Start -->
       <script>
       $( function() {
-        $( "#datepicker3" ).datepicker();
+        $( "#datepicker3" ).datepicker({ beforeShowDay: $.datepicker.noWeekends });
       } );
       </script>  
     <!-- End -->
