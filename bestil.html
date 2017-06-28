@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>FoodToSchool Bestilling</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="icon" href="pic/logo.png">
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+ 
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({ beforeShowDay: $.datepicker.noWeekends, minDate: 0, dateFormat: 'dd-mm-yy' });
+  } );
+  </script>
+<style>
+* {
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+html {
+    font-family: "Lucida Sans", sans-serif;
+}
+.header {
+    background-color: dodgerblue;
+    color: #ffffff;
+    padding: 15px;
+}
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu ti {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #32cd32;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu ti:hover {
+    background-color: #30c430;
+}
+
+.menu li:hover {
+    background-color: #0099cc;
+}
+.menu li a {
+    text-decoration: none;
+}
+.aside {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.footer {
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+}
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+    height: 525px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+.alert {
+    padding: 20px;
+    background-color: #36b2f4; 
+    color: white;
+    margin-bottom: 15px;
+}
+.alert2 {
+    padding: 20px;
+    background-color: #ff4655; 
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
+
+    
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="index.html" style="text-decoration: none;color: white;"><h1 style="text-align:center;">FoodToSchool</h1></a>
+  <p style="text-align:center;">Fastfood har aldrig været nemmere at bestille </p>
+
+</div>
+
+<div class="row">
+
+<div class="col-3 menu">   <ul> <a href="menu.html" style="text-decoration: none;"><li>Menuer</li></a>      <a href="mcd.html" style="text-decoration: none;"><li>McDonalds</li></a>       <a href="bk.html" style="text-decoration: none;"><li>Burger King</li></a>       <a href="carlsjr.html" style="text-decoration: none;"><li>Carl's Jr</li></a>       <a href="drikkevarer.html" style="text-decoration: none;"><li>Drikkevarer</li></a>     <a href="abonnement.html" style="text-decoration: none;"><li style="background-color: #32cd32">Abonnement</li></a>     <a href="om-os.html" style="text-decoration: none;"><li style="background-color: #32cd32">Om os</li></a>   </ul> </div>
+
+<div class="col-6">
+    
+    
+    <div class="alert2">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+      Reminder: Man kan ikke købe fra 6:25 til 12:45 på selve dagen. Vi refunderer købet hvis du kommer til at gøre det!
+    </div>
+    <div class="alert">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Er det første gang du handler på siden? Så tjek vores <a href="terms.html" style="color:white;">Terms of Service</a> ud for at finde ud af hvordan det hele fungerer!
+    </div>
+
+   <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">
+
+    <!-- Specify an Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" value="FoodToSchool">
+    <input type="hidden" name="currency_code" value="DKK">
+    <input type="hidden" name="no_shipping" value="1">
+
+
+    <h1>Bestilling</h1>
+    <!-- Provide a drop-down menu option field with prices. -->
+    <input type="hidden" name="on0" value="Mad">
+    <label for="os0">Produkter:</label>
+    <select name="os0">
+        <optgroup label="McDonald's">	
+        <option value="McDonald's Cheeseburger">Cheeseburger - 13 kr.</option>
+        <option value="McDonald's Hamburger">Hamburger - 13 kr.</option>
+        <option value="McDonald's Pomfritter">Pomfritter - 14 kr.</option>
+        <option value="McDonald's Big Mac">Big Mac - 40 kr.</option>
+        </optgroup>
+        <optgroup label="Burger King">	
+        <option value="Burger King Cheeseburger">Cheeseburger - 13 kr.</option>
+        <option value="Burger King Hamburger">Hamburger - 13 kr.</option>
+        <option value="Burger King Whopper">Whopper - 36 kr.</option>
+        </optgroup>
+        <optgroup label="Drikkevarer">	
+        <option value="Squash Light">Squash Light - 10 kr.</option>
+        <option value="Ananas">Ananas - 10 kr.</option>
+        <option value="Hindbær">Hindbær - 10 kr.</option>
+        <option value="Abrikos">Abrikos - 10 kr.</option>
+        <option value="Topform Light">Topform Light - 10 kr.</option>
+        </optgroup>
+        <optgroup label="Carl's Jr">	
+        <option value="Carl's Jr Famous Star">Famous Star - 50 kr.</option>
+        <option value="Carl's Jr Super Star">Super Star - 65 kr.</option>
+        <option value="Carl's Jr Western Bacon">Western Bacon - 53 kr.</option>
+        <option value="Carl's Jr The Big Carl">The Big Carl - 58 kr.</option>
+        </optgroup>
+        <optgroup label="Slik">
+        <option value="Marabou Mælk">Marabou Mælk - 28 kr.</option>
+        <option value="Marabou Schweizernød">Marabou Schweizernød - 28 kr.</option>
+        <option value="Marabou Mørk">Marabou Mælk - 28 kr.</option>
+        <option value="Marabou Daim">Marabou Mælk - 28 kr.</option>
+        <option value="Marabou Oreo">Marabou Mælk - 28 kr.</option>
+        </optgroup>
+
+    </select>
+    
+    <p></p>
+    
+    <input type="hidden" name="on1" value=" Klasse">
+    <label for="os1">Klasse:</label>
+        <select name="os1" id="os1">
+            <option value="Ukendt">
+                -- Vælg din klasse --</option>
+            <option value="0a">0.a</option>
+<option value="0b">0.b</option>
+<option value="0c">0.c</option>
+<option value="1a">1.a</option>
+<option value="1b">1.b</option>
+<option value="1c">1.c</option>
+<option value="2a">2.a</option>
+<option value="2b">2.b</option>
+<option value="2c">2.c</option>
+<option value="3a">3.a</option>
+<option value="3b">3.b</option>
+<option value="3c">3.c</option>
+<option value="4a">4.a</option>
+<option value="4b">4.b</option>
+<option value="4c">4.c</option>
+<option value="5a">5.a</option>
+<option value="5b">5.b</option>
+<option value="5c">5.c</option>
+<option value="6a">6.a</option>
+<option value="6b">6.b</option>
+<option value="6c">6.c</option>
+<option value="6a">7.a</option>
+<option value="7b">7.b</option>
+<option value="7c">7.c</option>
+<option value="7d">7.d</option>
+<option value="8a">8.a</option>
+<option value="8b">8.b</option>
+<option value="8c">8.c</option>
+<option value="8d">8.d</option>
+<option value="9a">9.a</option>
+<option value="9b">9.b</option>
+<option value="9c">9.c</option>
+
+
+
+        </select>
+
+    <!-- Specify the price that PayPal uses for each option. -->
+    <input type="hidden" name="option_index" value="0">
+    <input type="hidden" name="option_select0" value="McDonald's Cheeseburger">
+    <input type="hidden" name="option_amount0" value="13">
+    <input type="hidden" name="option_select1" value="McDonald's Hamburger">
+    <input type="hidden" name="option_amount1" value="13">
+    <input type="hidden" name="option_select2" value="McDonald's Pomfritter">
+    <input type="hidden" name="option_amount2" value="14">
+    <input type="hidden" name="option_select3" value="McDonald's Big Mac">
+    <input type="hidden" name="option_amount3" value="40">
+    <input type="hidden" name="option_index" value="0">
+    <input type="hidden" name="option_select4" value="Squash Light">
+    <input type="hidden" name="option_amount4" value="10">
+    <input type="hidden" name="option_select5" value="Ananas">
+    <input type="hidden" name="option_amount5" value="10">
+    <input type="hidden" name="option_select6" value="Hindbær">
+    <input type="hidden" name="option_amount6" value="10">
+    <input type="hidden" name="option_select7" value="Abrikos">
+    <input type="hidden" name="option_amount7" value="10">
+    <input type="hidden" name="option_select8" value="Topform Light">
+    <input type="hidden" name="option_amount8" value="10">
+    <input type="hidden" name="option_select9" value="Burger King Cheeseburger">
+    <input type="hidden" name="option_amount9" value="13">
+    <input type="hidden" name="option_select10" value="Burger King Hamburger">
+    <input type="hidden" name="option_amount10" value="13">
+    <input type="hidden" name="option_select11" value="Burger King Whopper">
+    <input type="hidden" name="option_amount11" value="36">
+    <input type="hidden" name="option_select12" value="Carl's Jr Famous Star">
+    <input type="hidden" name="option_amount12" value="50">
+    <input type="hidden" name="option_select13" value="Carl's Jr Super Star">
+    <input type="hidden" name="option_amount13" value="65">
+    <input type="hidden" name="option_select14" value="Carl's Jr Western Bacon">
+    <input type="hidden" name="option_amount14" value="53">
+    <input type="hidden" name="option_select15" value="Carl's Jr The Big Carl">
+    <input type="hidden" name="option_amount15" value="58">
+    <input type="hidden" name="option_select16" value="Marabou Mælk">
+    <input type="hidden" name="option_amount16" value="28">
+    <input type="hidden" name="option_select17" value="Marabou Schweizernød">
+    <input type="hidden" name="option_amount17" value="28">
+    <input type="hidden" name="option_select18" value="Marabou Mørk">
+    <input type="hidden" name="option_amount18" value="28">
+    <input type="hidden" name="option_select19" value="Marabou Daim">
+    <input type="hidden" name="option_amount19" value="28">
+    <input type="hidden" name="option_select20" value="Marabou Oreo">
+    <input type="hidden" name="option_amount20" value="28">
+    
+    <p></p>
+    
+    <input type="hidden" name="on2"value="Tidspunkt">
+    <label for="os2">Tidspunkt:</label>
+    <input type="text" id="datepicker" name="os2" id="os2">
+    <p></p>
+    
+    <input type="image" name="submit"
+        src="pic/button%20(1).png"
+        alt="Add to Cart">
+    <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    
+   
+    <pre></pre>
+    
+    
+
+
+    <!-- Display the payment button. -->
+    
+</form>
+
+    <br>
+
+   <h1>Comboer</h1>
+<div class="gallery">
+    <img src="pic/mcd/hero_cheeseburger.png" alt="McDonalds" width="300" height="200">
+  <div class="desc">FoodToSchool's Classic Combo - 3 Cheeseburgers og en valgfri sodavand 40 kr.</div>
+  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+      <!-- Identify your business so that you can collect the payments. -->
+      <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">
+
+      <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+      <input type="hidden" name="cmd" value="_cart">
+      <input type="hidden" name="add" value="1">
+
+      <!-- Specify details about the item that buyers will purchase. -->
+      <input type="hidden" name="item_name" value="Classic Combo - Tre Cheeseburgers og en sodavand">
+      <input type="hidden" name="amount" value="40">
+      <input type="hidden" name="currency_code" value="DKK">
+      <input type="hidden" name="on1" value=" Sodavand">
+                <label for="os1">Sodavand:</label>
+               <select name="os1">
+            <option value="Ingen sodavand">Ingen sodavand</option>
+            <option value="Squash Light">Squash Light</option>
+            <option value="Ananas">Ananas</option>
+            <option value="Hindbær">Hindbær</option>
+            <option value="Abrikos">Abrikos</option>
+            <option value="Topform Light">Topform Light</option>
+            </select>
+        <input type="hidden" name="option_index" value="0">
+        <input type="hidden" name="option_select1" value="Squash Light">
+        <input type="hidden" name="option_select2" value="Ananas">
+        <input type="hidden" name="option_select3" value="Hindbær">
+        <input type="hidden" name="option_select4" value="Abrikos">
+        <input type="hidden" name="option_select5" value="Topform Light">
+                <p></p>
+
+        <input type="hidden" name="on2" value=" Klasse">
+        <label for="os2">Klasse:        </label>
+            <select name="os2" id="os2">
+                <option value="Ukendt">
+                    -- Vælg din klasse --</option>
+                <option value="0a">0.a</option>
+<option value="0b">0.b</option>
+<option value="0c">0.c</option>
+<option value="1a">1.a</option>
+<option value="1b">1.b</option>
+<option value="1c">1.c</option>
+<option value="2a">2.a</option>
+<option value="2b">2.b</option>
+<option value="2c">2.c</option>
+<option value="3a">3.a</option>
+<option value="3b">3.b</option>
+<option value="3c">3.c</option>
+<option value="4a">4.a</option>
+<option value="4b">4.b</option>
+<option value="4c">4.c</option>
+<option value="5a">5.a</option>
+<option value="5b">5.b</option>
+<option value="5c">5.c</option>
+<option value="6a">6.a</option>
+<option value="6b">6.b</option>
+<option value="6c">6.c</option>
+<option value="6a">7.a</option>
+<option value="7b">7.b</option>
+<option value="7c">7.c</option>
+<option value="7d">7.d</option>
+<option value="8a">8.a</option>
+<option value="8b">8.b</option>
+<option value="8c">8.c</option>
+<option value="8d">8.d</option>
+<option value="9a">9.a</option>
+<option value="9b">9.b</option>
+<option value="9c">9.c</option>
+            </select>
+
+                <p></p>
+        <input type="hidden" name="on4"value="Tidspunkt">
+        <label for="os4">Tidspunkt:</label>
+        <input type="text" id="datepicker2" name="os4" id="os4">
+                <p></p>
+
+
+
+    <!-- Datepicker script to combos Start -->
+      <script>
+      $( function() {
+        $( "#datepicker2" ).datepicker({ beforeShowDay: $.datepicker.noWeekends, minDate: 0, dateFormat: 'dd-mm-yy' });
+      } );
+      
+      </script> 
+      
+    <!-- End -->
+
+      <input type="image" name="submit"
+        src="pic/button%20(1).png"
+        alt="Add to Cart">
+      <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+    
+</div>
+    
+<div class="gallery">
+    <img src="pic/bk/CHEESEBURGER-nos.png" alt="Burger King" width="300" height="200">
+  <div class="desc">FoodToSchool's BK Combo - 3 Cheeseburgers og en valgfri sodavand 40 kr.</div>
+  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+      <!-- Identify your business so that you can collect the payments. -->
+      <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">
+
+      <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+      <input type="hidden" name="cmd" value="_cart">
+      <input type="hidden" name="add" value="1">
+
+      <!-- Specify details about the item that buyers will purchase. -->
+      <input type="hidden" name="item_name" value="BK Combo - Tre Cheeseburgers og en sodavand">
+      <input type="hidden" name="amount" value="40">
+      <input type="hidden" name="currency_code" value="DKK">
+      <input type="hidden" name="on1" value=" Sodavand">
+                <label for="os1">Sodavand:</label>
+               <select name="os1">
+            <option value="Ingen sodavand">Ingen sodavand</option>
+            <option value="Squash Light">Squash Light</option>
+            <option value="Ananas">Ananas</option>
+            <option value="Hindbær">Hindbær</option>
+            <option value="Abrikos">Abrikos</option>
+            <option value="Topform Light">Topform Light</option>
+            </select>
+        <input type="hidden" name="option_index" value="0">
+        <input type="hidden" name="option_select1" value="Squash Light">
+        <input type="hidden" name="option_select2" value="Ananas">
+        <input type="hidden" name="option_select3" value="Hindbær">
+        <input type="hidden" name="option_select4" value="Abrikos">
+        <input type="hidden" name="option_select5" value="Topform Light">
+                <p></p>
+
+        <input type="hidden" name="on2" value=" Klasse">
+        <label for="os2">Klasse:        </label>
+            <select name="os2" id="os2">
+                <option value="Ukendt">
+                    -- Vælg din klasse --</option>
+                <option value="0a">0.a</option>
+<option value="0b">0.b</option>
+<option value="0c">0.c</option>
+<option value="1a">1.a</option>
+<option value="1b">1.b</option>
+<option value="1c">1.c</option>
+<option value="2a">2.a</option>
+<option value="2b">2.b</option>
+<option value="2c">2.c</option>
+<option value="3a">3.a</option>
+<option value="3b">3.b</option>
+<option value="3c">3.c</option>
+<option value="4a">4.a</option>
+<option value="4b">4.b</option>
+<option value="4c">4.c</option>
+<option value="5a">5.a</option>
+<option value="5b">5.b</option>
+<option value="5c">5.c</option>
+<option value="6a">6.a</option>
+<option value="6b">6.b</option>
+<option value="6c">6.c</option>
+<option value="6a">7.a</option>
+<option value="7b">7.b</option>
+<option value="7c">7.c</option>
+<option value="7d">7.d</option>
+<option value="8a">8.a</option>
+<option value="8b">8.b</option>
+<option value="8c">8.c</option>
+<option value="8d">8.d</option>
+<option value="9a">9.a</option>
+<option value="9b">9.b</option>
+<option value="9c">9.c</option>
+            </select>
+
+                <p></p>
+        <input type="hidden" name="on4"value="Tidspunkt">
+        <label for="os4">Tidspunkt:</label>
+        <input type="text" id="datepicker3" name="os4" id="os4">
+                <p></p>
+
+
+
+    <!-- Datepicker script to combos Start -->
+      <script>
+      $( function() {
+        $( "#datepicker3" ).datepicker({ beforeShowDay: $.datepicker.noWeekends, minDate: 0, dateFormat: 'dd-mm-yy'});
+      } );
+      </script>  
+    <!-- End -->
+
+      <input type="image" name="submit"
+        src="pic/button%20(1).png"
+        alt="Add to Cart">
+      <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+    
+<br>
+    
+
+</div>
+
+<div class="gallery">
+    <img src="pic/slik/48091.png" alt="Marabou" width="300" height="200">
+  <div class="desc">Marabou Venner - 2 valgfri Marabou plader 48 kr.</div>
+  <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+      <!-- Identify your business so that you can collect the payments. -->
+      <input type="hidden" name="business" value="jakob.zornigkjellberg@gmail.com">
+
+      <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+      <input type="hidden" name="cmd" value="_cart">
+      <input type="hidden" name="add" value="1">
+
+      <!-- Specify details about the item that buyers will purchase. -->
+      <input type="hidden" name="item_name" value="Marabou Venner - 2 valgfri Marabou plader">
+      <input type="hidden" name="amount" value="48">
+      <input type="hidden" name="currency_code" value="DKK">
+      <input type="hidden" name="on1" value=" Første">
+                <label for="os1">Første:</label>
+               <select name="os1">
+            <option value="Mælk">Mælk</option>
+            <option value="Schweizernød">Schweizernød</option>
+            <option value="Mørk">Mørk</option>
+            <option value="Daim">Daim</option>
+            <option value="Oreo">Oreo</option>
+            </select>
+        <input type="hidden" name="option_index" value="0">
+        <input type="hidden" name="option_select1" value="Mælk">
+        <input type="hidden" name="option_select2" value="Schweizernød">
+        <input type="hidden" name="option_select3" value="Mørk">
+        <input type="hidden" name="option_select4" value="Daim">
+        <input type="hidden" name="option_select5" value="Oreo">
+                <p></p>
+       <input type="hidden" name="on5" value=" Anden">
+                <label for="os5">Anden:</label>
+               <select name="os5">
+            <option value="Mælk">Mælk</option>
+            <option value="Schweizernød">Schweizernød</option>
+            <option value="Mørk">Mørk</option>
+            <option value="Daim">Daim</option>
+            <option value="Oreo">Oreo</option>
+            </select>
+        <input type="hidden" name="option_index" value="0">
+        <input type="hidden" name="option_select1" value="Mælk">
+        <input type="hidden" name="option_select2" value="Schweizernød">
+        <input type="hidden" name="option_select3" value="Mørk">
+        <input type="hidden" name="option_select4" value="Daim">
+        <input type="hidden" name="option_select5" value="Oreo">
+      <p></p>
+
+        <input type="hidden" name="on2" value=" Klasse">
+        <label for="os2">Klasse:        </label>
+            <select name="os2" id="os2">
+                <option value="Ukendt">
+                    -- Vælg din klasse --</option>
+                <option value="0a">0.a</option>
+<option value="0b">0.b</option>
+<option value="0c">0.c</option>
+<option value="1a">1.a</option>
+<option value="1b">1.b</option>
+<option value="1c">1.c</option>
+<option value="2a">2.a</option>
+<option value="2b">2.b</option>
+<option value="2c">2.c</option>
+<option value="3a">3.a</option>
+<option value="3b">3.b</option>
+<option value="3c">3.c</option>
+<option value="4a">4.a</option>
+<option value="4b">4.b</option>
+<option value="4c">4.c</option>
+<option value="5a">5.a</option>
+<option value="5b">5.b</option>
+<option value="5c">5.c</option>
+<option value="6a">6.a</option>
+<option value="6b">6.b</option>
+<option value="6c">6.c</option>
+<option value="6a">7.a</option>
+<option value="7b">7.b</option>
+<option value="7c">7.c</option>
+<option value="7d">7.d</option>
+<option value="8a">8.a</option>
+<option value="8b">8.b</option>
+<option value="8c">8.c</option>
+<option value="8d">8.d</option>
+<option value="9a">9.a</option>
+<option value="9b">9.b</option>
+<option value="9c">9.c</option>
+            </select>
+
+                <p></p>
+        <input type="hidden" name="on4"value="Tidspunkt">
+        <label for="os4">Tidspunkt:</label>
+        <input type="text" id="datepicker4" name="os4" id="os4">
+                <p></p>
+
+
+
+    <!-- Datepicker script to combos Start -->
+      <script>
+      $( function() {
+        $( "#datepicker4" ).datepicker({ beforeShowDay: $.datepicker.noWeekends, minDate: 0, dateFormat: 'dd-mm-yy' });
+      } );
+      
+      </script> 
+      
+    <!-- End -->
+
+      <input type="image" name="submit"
+        src="pic/button%20(1).png"
+        alt="Add to Cart">
+      <img alt="" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+    </form>
+    
+</div>
+    
+
+        
+
+
+</div>
+<div class="col-3 right">
+    <a class="twitter-timeline" href="https://twitter.com/official_gpfood"data-width="400"
+  data-height="375">Tweets by FoodToSchool</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a href="https://twitter.com/official_gpfood" class="twitter-follow-button" data-show-count="false">Follow @FoodToSchool</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+
+</body>
+</html>
