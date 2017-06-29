@@ -113,11 +113,6 @@ div.desc {
     text-decoration: none;
     color: black;
 }
-.responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-}
 
 .columns {
     float: left;
@@ -169,6 +164,32 @@ div.desc {
         width: 100%;
     }
 }
+.icon {
+    display: none;
+    text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+  .menu a:not(:first-child) {display: none;}
+  .menu a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu.responsive {position: relative;}
+  .col-3 menu.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .menu.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
 
 </style>
 </head>
@@ -184,8 +205,18 @@ div.desc {
 
 <div class="row">
 
-<div class="col-3 menu">   <ul> <a href="menu.html" style="text-decoration: none;"><li>Menuer</li></a>       <a href="mcd.html" style="text-decoration: none;"><li>McDonalds</li></a>       <a href="bk.html" style="text-decoration: none;"><li>Burger King</li></a>       <a href="carlsjr.html" style="text-decoration: none;"><li>Carl's Jr</li></a>       <a href="drikkevarer.html" style="text-decoration: none;"><li>Drikkevarer</li></a>     <a href="abonnement.html" style="text-decoration: none;"><li style="background-color: #32cd32">Abonnement</li></a>     <a href="om-os.html" style="text-decoration: none;"><li style="background-color: #32cd32">Om os</li></a>   </ul> </div>
-
+<div class="col-3 menu" id="myTopnav">   <ul> <a href="menu.html" style="text-decoration: none;"><li>Menuer</li></a>      <a href="mcd.html" style="text-decoration: none;"><li>McDonalds</li></a>       <a href="bk.html" style="text-decoration: none;"><li>Burger King</li></a>       <a href="carlsjr.html" style="text-decoration: none;"><li>Carl's Jr</li></a>       <a href="drikkevarer.html" style="text-decoration: none;"><li>Drikkevarer</li></a>     <a href="abonnement.html" style="text-decoration: none;"><li style="background-color: #32cd32">Abonnement</li></a>     <a href="om-os.html" style="text-decoration: none;"><li style="background-color: #32cd32">Om os</li></a> <a href="javascript:void(0);" style="font-size:25px; border-style: solid;
+    border-width: 1px;" class="icon" onclick="myFunction()">&#9776;</a>   </ul> </div>
+<script>
+    function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "col-3 menu") {
+        x.className += " responsive";
+    } else {
+        x.className = "col-3 menu";
+    }
+}
+</script>
 
 <div class="col-8">
  
